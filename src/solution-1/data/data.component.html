@@ -1,0 +1,9 @@
+<ng-container *ngIf="events$ | async as events">
+  <div class="row" *ngFor="let event of events;trackBy:matchEventTrackBy;let index = index;">
+    <p>{{event.id}}</p>
+    <p>{{event.team}}</p>
+    <p>{{event.time}}</p>
+    <button (click)="update(event)">Update</button>
+    <button (click)="delete(event)">Delete</button>
+  </div>
+</ng-container>
